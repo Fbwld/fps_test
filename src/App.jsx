@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Table from 'react-bootstrap/Table';
 import Logo from './assets/images/logo-fps.png';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
 
 function App() {
   const [negaraOptions, setNegaraOptions] = useState([]);
@@ -81,7 +77,11 @@ function App() {
   };
 
   return (
-    <Form style={{ paddingRight: '150px', paddingLeft: '150px'}}>
+    <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>    
+    <Form>
+      <img src={Logo} style={{
+        width:'30%'
+      }}/>
       <Form.Group as={Col} md="5">
         <Form.Label
          style={{
@@ -180,6 +180,7 @@ function App() {
         </Form.Group>
       {/* Your other form controls go here */}
     </Form>
+    </div>
   );
 }
 
