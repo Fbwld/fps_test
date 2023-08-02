@@ -97,7 +97,7 @@ function App() {
           <option value="">Pilih Negara</option>
           {negaraOptions.map((negara) => (
             <option key={negara.id} value={negara.id}>
-              {negara.negara}
+              {negara.code}-{negara.negara}
             </option>
           ))}
         </Form.Control>
@@ -113,6 +113,7 @@ function App() {
           value={pelabuhan}
           onChange={handlePelabuhanChange}
           required
+          disabled={!negara}
         >
           <option value="">Pilih Pelabuhan</option>
           {pelabuhanOptions.map((pelabuhan) => (
@@ -133,11 +134,12 @@ function App() {
           value={barang}
           onChange={handleBarangChange}
           required
+          disabled={!pelabuhan}
         >
           <option value="">Pilih Barang</option>
           {barangOptions.map((barang) => (
             <option key={barang.id} value={barang.id}>
-              {barang.name}
+              {barang.code}-{barang.name}
             </option>
           ))}
         </Form.Control>
